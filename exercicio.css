@@ -1,0 +1,81 @@
+/* Exercício 1: Criar uma transição para quando o mouse estiver em cima dos
+* botões play/stop (para que o elemento se revele lentamente)
+*/
+#controles ul {
+  transition-duration: 1000ms;
+}
+
+/*
+* Exercício 2: Você deve implementar uma metáfora visual para cada um dos 4
+* estados dos animais. Algumas sugestões:
+*   - agitado: animal piscando (opacidade variando)
+*   - alimentado: uma borda verde no animal e o animal fica girando de alegria
+*   - perturbado: animal fica pulsando
+*   - instinto-selvagem: animal dá um salto e cresce, com uma borda vermelha
+*/
+.agitado {
+  animation-name: restless;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.agitado img {}
+
+.alimentado {
+  animation-name: fed;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+.alimentado img {
+  background-color: rgb(136, 228, 95);
+}
+
+.perturbado {}
+.perturbado img {
+  animation-name: disturbed;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+.instinto-selvagem {
+  position: relative;
+  animation-name: wild;
+  animation-duration: 0.25s;
+  animation-iteration-count: infinite;
+}
+.instinto-selvagem img {
+  background-color: rgb(220,20,60);
+}
+
+@keyframes restless {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fed {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes disturbed {
+  0%   { transform: scale(0.8); }
+  100% { transform: scale(1.2); }
+}
+
+@keyframes wild {
+  100% { top: 20px; left: 20px; }
+}
+
+/*
+* Exercício 3: Criar uma imagem sprite com as imagens dos botões de controle
+* (icone-comecar.png e icone-parar.png). Sugestões:
+*   - Usar o nome: sprite-controles.png
+*   - Usar o paint.NET (ou Photoshop) para gerar a nova imagem (sprite)
+*
+*/
+
+.comecar,
+.parar {}
+
+.comecar {}
+
+.parar {}
